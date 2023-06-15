@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title_block %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "app.css" %}">
+    {% block css_file %}{% endblock %}
+</head>
+<body>
+<header id="main-navigation">
+    <h1><a href="{% url "starting-page" %}">Mustafa' Blog</a></h1>
+    <nav>
+        <a href="{% url "posts-page" %}">All posts</a>
+        <a href="{% url "read-later" %}">Read later</a>
+
+    </nav>
+</header>
+{% block body_block %}{% endblock %}
+</body>
+</html>

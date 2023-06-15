@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_file %}
+
+    <link rel="stylesheet" href="{% static "Blog/post.css" %}">
+
+    <link rel="stylesheet" href="{% static "Blog/all-posts.css" %}">
+
+{% endblock %}
+{% block title_block %}Read later posts {% endblock %}
+{% block body_block %}
+
+    <section id="all-posts">
+        <h2> Read later List</h2>
+        {% if has_posts %}
+
+            <ul>
+                {% for p in posts %}
+                    {% include "Blog/includes/post.html" %}
+                {% endfor %}
+            </ul>
+
+
+        {% endif %}
+        {% if not has_posts %}
+            <p>you did not add any post for read later yet</p>
+        {% endif %}
+
+
+
+
+
+
+{% endblock %}
